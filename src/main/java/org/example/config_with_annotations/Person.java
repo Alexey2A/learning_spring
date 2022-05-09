@@ -1,13 +1,20 @@
-package org.example.config_with_xml;
+package org.example.config_with_annotations;
 
-import org.example.config_with_xml.Car;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component("personBean")
 public class Person {
+    @Value("${person.name}")
     private String name;
+    @Value("${person.surname}")
     private String surname;
     private Car car;
 
-    public Person(Car car) {
+    @Autowired
+    public Person(@Qualifier("truckBean") Car car) {
         this.car = car;
     }
 

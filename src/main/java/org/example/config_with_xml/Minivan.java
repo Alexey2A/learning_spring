@@ -6,8 +6,6 @@ public class Minivan extends Car {
         System.out.println("ездит на минивэне");
     }
 
-
-
     @Override
     public String toString() {
         return "Minivan{}";
